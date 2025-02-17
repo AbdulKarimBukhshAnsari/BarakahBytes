@@ -1,0 +1,18 @@
+/* Custom Bounce Animation */
+@keyframes customBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-30px); /* Adjust the bounce height */
+    }
+  }
+  
+  .custom-bounce {
+    animation: customBounce 4s ease-in-out infinite; /* Adjust duration and easing */
+  }
+  /* Custom Text Shadow */
+.text-shadow {
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.6); /* Adjust the shadow size and opacity */
+  }
+  
