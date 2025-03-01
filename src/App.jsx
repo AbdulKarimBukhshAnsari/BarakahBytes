@@ -4,6 +4,8 @@ import Header from './Components/Header/Header'
 import Hero from './Components/Hero/Hero'
 import KeyFeatures from './Components/KeyFeatures/KeyFeatures'
 import HowToUse from './Components/HowToUse/HowToUse'
+import StartNow from './Components/StartNow/StartNow'
+import Footer from './Components/Footer/Footer'
 
 function App() {
 
@@ -14,7 +16,9 @@ function App() {
     <Hero />
     <KeyFeatures />
     <Outlet /> 
-    <HowToUse/> 
+    <HowToUse /> 
+    <StartNow />
+    <Footer />
     </>
   )
 }
