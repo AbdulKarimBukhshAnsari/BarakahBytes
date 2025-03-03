@@ -1,7 +1,24 @@
 import React from "react";
 import { Menu } from 'lucide-react';
+import { supabase } from "../../createClient";
 
 export default function Header() {
+
+  const handleLogin = async () =>{
+    const {data} = await supabase.auth.signInWithOAuth(
+            {
+              provider : 'google',
+              options: {
+                queryParams: {
+                  access_type: 'offline',
+                  prompt: 'consent',
+                },
+              },
+      
+            }
+          )
+  }
+
   return (
     <>
       <header className="fixed top-0 w-full z-50 bg-[#0c2742] backdrop-blur-md border-b border-gray-500/10 opacity-90 md:px-24">
@@ -28,7 +45,7 @@ export default function Header() {
               </a>
               
               {/* Login and Sign Up Buttons */}
-              <button className="text-red-500 border-2 border-red-500 px-8 py-2 rounded-md hover:bg-red-500 hover:text-white transition-colors duration-300 cursor-pointer">
+              <button className="text-red-500 border-2 border-red-500 px-8 py-2 rounded-md hover:bg-red-500 hover:text-white transition-colors duration-300 cursor-pointer" onClick={handleLogin}>
                 Login
               </button>
               <button className="bg-red-500 text-white px-8 py-2 rounded-md hover:bg-red-600 transition-colors duration-300 cursor-pointer">
