@@ -1,18 +1,7 @@
 import React from "react";
 import { Brain, Sparkles, Share2 } from "lucide-react";
-import { supabase } from "../../createClient";
 
 export default function KeyFeatures() {
-  
-
-  const dataMining = async () =>{
-
-    const {data} = await supabase.from('user').select('*');
-    console.log(data);
-  }
-
-  dataMining();
-  
   const key_features = [
     {
       key: 0,

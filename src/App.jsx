@@ -13,7 +13,12 @@ function App() {
   return (
     <>
     <Header />
+    <Hero />
+    <KeyFeatures />
     <Outlet /> 
+    <HowToUse /> 
+    <StartNow />
+    <Footer />
     </>
   )
 }
