@@ -7,11 +7,16 @@ import StartNow from "../Components/StartNow/StartNow";
 
 
 export default function HomePage(){
+    const [data , setData] = useState({});
+    
+        useEffect(()=>{
+          setData(JSON.parse(localStorage.getItem('data')))
+        } , [])
 
     return (
         <>
-        <Hero />
-        <KeyFeatures />
+        <Hero data = {data} setData = {setData}/>
+        <KeyFeatures data = {data} setData = {setData} />
         <HowToUse />
         <StartNow />
         <Footer />
