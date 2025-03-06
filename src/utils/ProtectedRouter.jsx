@@ -5,13 +5,13 @@ import { Navigate , useLocation  } from "react-router-dom";
 
 const ProtectedRoute = ({ children }) => {
     const location = useLocation();
-    const data = JSON.parse(localStorage.getItem("data"));
+    const data = JSON.parse(localStorage.getItem("data") || '{}');
 
-    if (!data['session']) {
+    if (!data) {
         return <Navigate to="/" state={{ from: location }} />;
     }
 
-    return children;  // ✅ Return the children (jo bhi component andar diya ho)
+    return children;  
 };
 
 export default ProtectedRoute;
